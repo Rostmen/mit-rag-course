@@ -177,8 +177,6 @@ def make_row(
         if not expected_sources
         else str(len(matched_expected_sources) == len(set(expected_sources))).lower()
     )
-    mrr = 0.0 if rank is None else 1.0 / rank
-
     return {
         "timestamp": timestamp,
         "case_id": case["id"],
@@ -194,7 +192,6 @@ def make_row(
         "top_source": retrieved_sources[0] if retrieved_sources else "",
         "expected_source_rank": rank if rank is not None else "",
         "source_hit": source_hit,
-        "mrr": f"{mrr:.3f}",
         "judge_score": judge_score.score if judge_score else "",
         "judge_rationale": judge_score.rationale if judge_score else "",
         "reference_answer": case.get("reference_answer", ""),
@@ -230,7 +227,7 @@ def write_log(path: Path, rows: list[dict[str, Any]]) -> None:
                 f"MATCHED_EXPECTED_SOURCES: {row['matched_expected_sources'] or 'none'}",
                 f"EXPECTED_SOURCE_COVERAGE: {row['expected_source_coverage']}",
                 f"ALL_EXPECTED_SOURCES_HIT: {row['all_expected_sources_hit']}",
-                f"SOURCE_HIT: {row['source_hit']}  MRR: {row['mrr']}",
+                f"SOURCE_HIT: {row['source_hit']}",
             ]
         )
         if row["judge_score"]:
