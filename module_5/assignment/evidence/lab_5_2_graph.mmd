@@ -1,0 +1,37 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	plan(plan)
+	retrieve(retrieve)
+	lookup_papers(lookup_papers)
+	read_paper(read_paper)
+	follow_references(follow_references)
+	clarify(clarify)
+	answer(answer)
+	check_coverage(check_coverage)
+	__end__([<p>__end__</p>]):::last
+	__start__ --> plan;
+	check_coverage -.-> answer;
+	check_coverage -.-> plan;
+	clarify -.-> answer;
+	clarify -.-> plan;
+	follow_references --> plan;
+	lookup_papers --> plan;
+	plan -.-> answer;
+	plan -.-> check_coverage;
+	plan -.-> clarify;
+	plan -.-> follow_references;
+	plan -.-> lookup_papers;
+	plan -.-> read_paper;
+	plan -.-> retrieve;
+	read_paper --> plan;
+	retrieve --> plan;
+	answer --> __end__;
+	plan -.-> plan;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc

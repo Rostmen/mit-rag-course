@@ -1,0 +1,60 @@
+[
+  {
+    "id": "benchmark_design_code_and_robotics",
+    "category": "benchmark_comparison",
+    "question": "Compare the evaluation design of LiveCodeBench and Bench-Push. For each benchmark, state what is being evaluated, what makes the test setting realistic or reproducible, and what metrics or task categories are used.",
+    "reference_answer": "LiveCodeBench evaluates code LLMs on live contest problems and broader capabilities such as self-repair, code execution, and test output prediction; its live-updating design reduces contamination. Bench-Push evaluates pushing-based navigation and manipulation for mobile robots using simulated environments, metrics for efficiency, interaction effort, and partial completion, and baseline demonstrations for reproducibility.",
+    "grading_notes": "Pass only if the answer compares both benchmarks. It must identify LiveCodeBench's code-LLM setting, live/contamination-free problems, and at least two of self-repair, code execution, or test-output prediction. It must identify Bench-Push's pushing-based mobile robot tasks, simulated environments, evaluation metrics, and baseline demonstrations. Missing either benchmark's reproducibility/realism point is a failure.",
+    "expected_sources": [
+      "DBLP_conf_iclr_JainHGLYZWSSS25.pdf",
+      "DBLP_conf_icra_CamposISK19.pdf"
+    ],
+    "required_terms": [
+      "LiveCodeBench",
+      "Bench-Push",
+      "self-repair",
+      "simulated environments",
+      "metrics"
+    ],
+    "answer_type": "supported"
+  },
+  {
+    "id": "self_repair_benchmark_and_risk",
+    "category": "multi_document_synthesis",
+    "question": "Synthesize what the corpus says about self-repair in code generation: describe the repair workflow, explain how LiveCodeBench evaluates related capabilities, and explain why counterfeit-samples work recommends caution with self-repair or model-based reranking.",
+    "reference_answer": "The self-repair workflow samples code, executes it against tests, generates feedback from errors or failures, and uses that feedback to produce a repaired program. LiveCodeBench evaluates code-generation-adjacent capabilities including self-repair, code execution, and test output prediction on live contest problems. The counterfeit-samples papers warn that models can misunderstand, misclassify, or poorly repair their own flawed outputs, so self-repair and model-based reranking are risky without external feedback.",
+    "grading_notes": "Pass only if the answer covers all three parts: the Olausson-style self-repair workflow; LiveCodeBench's broader evaluation capabilities including self-repair, code execution, and test output prediction; and the counterfeit-samples caution about models using their own feedback, low repair rates, or lack of external feedback. Missing any part is a failure.",
+    "expected_sources": [
+      "DBLP_conf_iclr_OlaussonIW0S24.pdf",
+      "DBLP_conf_iclr_JainHGLYZWSSS25.pdf",
+      "DBLP_conf_acl_GuLJOLSS24.pdf"
+    ],
+    "required_terms": [
+      "feedback",
+      "self-repair",
+      "code execution",
+      "external feedback"
+    ],
+    "answer_type": "supported"
+  },
+  {
+    "id": "synthesis_search_strategies",
+    "category": "method_comparison",
+    "question": "Compare CVC4SY and adaptive concretization as search strategies for syntax-guided synthesis. What search space does each address, what mechanism does each use, and what tradeoff or benefit is each trying to achieve?",
+    "reference_answer": "CVC4SY is a SyGuS solver based on bounded term enumeration, using algebraic-datatype encoding, optimized brute-force enumeration, and a combined strategy. Adaptive concretization addresses search over assignments to unknowns in syntax-guided synthesis by combining benefits of explicit enumeration and symbolic search, with natural parallelism and performance benefits.",
+    "grading_notes": "Pass only if the answer compares both methods. It must identify CVC4SY's bounded term-enumeration strategies, including algebraic datatypes and brute force or the combined strategy. It must identify adaptive concretization's explicit-vs-symbolic search tradeoff and parallelism/performance motivation. Answers that describe only one method fail.",
+    "expected_sources": [
+      "DBLP_conf_cav_GaoKDRSAK19.pdf",
+      "DBLP_conf_cav_JeonQSF15.pdf",
+      "DBLP_journals_fmsd_JeonQSF17.pdf"
+    ],
+    "required_terms": [
+      "CVC4SY",
+      "term enumeration",
+      "explicit",
+      "symbolic",
+      "parallel"
+    ],
+    "answer_type": "supported"
+  }
+]

@@ -1,0 +1,31 @@
+{
+  "tests": [
+    "test_agent_rag.GraphTests.test_batch_clarification_never_blocks",
+    "test_agent_rag.GraphTests.test_chat_clarification_returns_to_plan_with_response",
+    "test_agent_rag.GraphTests.test_citation_range_including_grouped_citations",
+    "test_agent_rag.GraphTests.test_coverage_requires_all_checklist_indices",
+    "test_agent_rag.GraphTests.test_deterministic_catalogue_year_filter",
+    "test_agent_rag.GraphTests.test_fabricated_support_quote_does_not_pass_gate",
+    "test_agent_rag.GraphTests.test_fresh_batch_state_and_explicit_conversation_history",
+    "test_agent_rag.GraphTests.test_lab51_actual_graph_loops_after_observation",
+    "test_agent_rag.GraphTests.test_lab51_budget_checked_before_another_model_call",
+    "test_agent_rag.GraphTests.test_lab51_deduplicates_and_preserves_input_state",
+    "test_agent_rag.GraphTests.test_lab51_invalid_json_stops_without_retry",
+    "test_agent_rag.GraphTests.test_lab52_budget_checked_before_planning",
+    "test_agent_rag.GraphTests.test_lab52_duplicate_tool_call_stops",
+    "test_agent_rag.GraphTests.test_lab52_rejects_unobserved_filename",
+    "test_agent_rag.GraphTests.test_lab52_routes_metadata_then_focused_read",
+    "test_agent_rag.GraphTests.test_lab52_selects_followup_after_actual_retrieval",
+    "test_agent_rag.GraphTests.test_lab52_unknown_action_stops_without_retry",
+    "test_agent_rag.GraphTests.test_missing_coverage_returns_to_planner_then_new_tool",
+    "test_agent_rag.GraphTests.test_missing_optional_explanation_does_not_discard_valid_tool",
+    "test_agent_rag.GraphTests.test_null_required_tool_argument_is_rejected",
+    "test_agent_rag.GraphTests.test_read_paper_keeps_identity_and_targeted_passage",
+    "test_agent_rag.GraphTests.test_structured_transport_has_required_fields",
+    "test_agent_rag.GraphTests.test_unused_null_fields_do_not_reject_valid_answer"
+  ],
+  "passed": 23,
+  "failures": [],
+  "errors": [],
+  "test_file_sha256": "a5d8efe95a0fe234e9bc9531074e4a530ce44b880f94e060b2eeac6667820814"
+}

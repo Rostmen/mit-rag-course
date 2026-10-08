@@ -1,0 +1,526 @@
+{
+  "reviewer": "Assistant inspection; not independent human review",
+  "method": "Frozen Module 4 grading notes; completeness is judged from the answer, support from retrieved PDF text. Honest missing-information statements are incomplete, not hallucinations.",
+  "records": [
+    {
+      "mode": "baseline",
+      "case_id": "benchmark_design_code_and_robotics",
+      "criteria": [
+        {
+          "index": 1,
+          "complete": false,
+          "supported": true,
+          "source_ids": [
+            1,
+            2,
+            3
+          ],
+          "reason": "Competition problems are described, but the answer omits live updates and contamination reduction."
+        },
+        {
+          "index": 2,
+          "complete": true,
+          "supported": true,
+          "source_ids": [
+            3
+          ],
+          "reason": "Names self-repair and code execution."
+        },
+        {
+          "index": 3,
+          "complete": false,
+          "supported": false,
+          "source_ids": [],
+          "reason": "No Bench-Push evidence or substantive answer."
+        },
+        {
+          "index": 4,
+          "complete": false,
+          "supported": false,
+          "source_ids": [],
+          "reason": "No Bench-Push metrics or baseline demonstrations."
+        }
+      ],
+      "covered_criteria": 1,
+      "total_criteria": 4,
+      "unsupported_claims": [],
+      "passed": false
+    },
+    {
+      "mode": "baseline",
+      "case_id": "self_repair_benchmark_and_risk",
+      "criteria": [
+        {
+          "index": 1,
+          "complete": true,
+          "supported": true,
+          "source_ids": [
+            3
+          ],
+          "reason": "Accurately describes generation, testing, feedback, repair."
+        },
+        {
+          "index": 2,
+          "complete": false,
+          "supported": false,
+          "source_ids": [],
+          "reason": "Substitutes a general code-understanding discussion for LiveCodeBench capabilities."
+        },
+        {
+          "index": 3,
+          "complete": true,
+          "supported": true,
+          "source_ids": [
+            2
+          ],
+          "reason": "Explains low repair rates and unreliable self-feedback; meets the inherited grading note on counterfeit caution. The separate easier-to-assess statement is flagged below."
+        }
+      ],
+      "covered_criteria": 2,
+      "total_criteria": 3,
+      "unsupported_claims": [
+        "Says counterfeit samples from easier problems are slightly easier to assess; Source 2 says they are not easier to assess."
+      ],
+      "passed": false
+    },
+    {
+      "mode": "baseline",
+      "case_id": "synthesis_search_strategies",
+      "criteria": [
+        {
+          "index": 1,
+          "complete": false,
+          "supported": false,
+          "source_ids": [],
+          "reason": "No CVC4SY passage; generic symbolic synthesis is incorrectly attributed to CVC4SY."
+        },
+        {
+          "index": 2,
+          "complete": false,
+          "supported": false,
+          "source_ids": [],
+          "reason": "No algebraic-datatype, brute-force, or hybrid CVC4SY mechanism."
+        },
+        {
+          "index": 3,
+          "complete": true,
+          "supported": true,
+          "source_ids": [
+            1,
+            3
+          ],
+          "reason": "Explains influential unknowns, explicit concretization and remaining symbolic search."
+        },
+        {
+          "index": 4,
+          "complete": true,
+          "supported": true,
+          "source_ids": [
+            1,
+            2,
+            3
+          ],
+          "reason": "Explains complementary search and multicore scalability."
+        }
+      ],
+      "covered_criteria": 2,
+      "total_criteria": 4,
+      "unsupported_claims": [
+        "Attributes generic SAT-based symbolic search to CVC4SY without a passage about CVC4SY."
+      ],
+      "passed": false
+    },
+    {
+      "mode": "baseline_wide",
+      "case_id": "benchmark_design_code_and_robotics",
+      "criteria": [
+        {
+          "index": 1,
+          "complete": true,
+          "supported": true,
+          "source_ids": [
+            1,
+            6,
+            9
+          ],
+          "reason": "States competition tasks, live release-date windows and contamination avoidance."
+        },
+        {
+          "index": 2,
+          "complete": true,
+          "supported": true,
+          "source_ids": [
+            3
+          ],
+          "reason": "Names self-repair and code execution."
+        },
+        {
+          "index": 3,
+          "complete": true,
+          "supported": true,
+          "source_ids": [
+            4,
+            5,
+            8
+          ],
+          "reason": "Mobile robot navigation/manipulation and 2D/3D simulation are described."
+        },
+        {
+          "index": 4,
+          "complete": false,
+          "supported": true,
+          "source_ids": [
+            5,
+            7
+          ],
+          "reason": "Metrics are covered, but baseline implementations/demonstrations are omitted from the answer although present in the passages."
+        }
+      ],
+      "covered_criteria": 3,
+      "total_criteria": 4,
+      "unsupported_claims": [],
+      "passed": false
+    },
+    {
+      "mode": "baseline_wide",
+      "case_id": "self_repair_benchmark_and_risk",
+      "criteria": [
+        {
+          "index": 1,
+          "complete": true,
+          "supported": true,
+          "source_ids": [
+            3,
+            7
+          ],
+          "reason": "Explicit four-stage workflow."
+        },
+        {
+          "index": 2,
+          "complete": true,
+          "supported": true,
+          "source_ids": [
+            12
+          ],
+          "reason": "Names all four LiveCodeBench scenarios."
+        },
+        {
+          "index": 3,
+          "complete": true,
+          "supported": true,
+          "source_ids": [
+            2,
+            4
+          ],
+          "reason": "Cautions about counterfeits and reliance on feedback without external signals."
+        }
+      ],
+      "covered_criteria": 3,
+      "total_criteria": 3,
+      "unsupported_claims": [],
+      "passed": true
+    },
+    {
+      "mode": "baseline_wide",
+      "case_id": "synthesis_search_strategies",
+      "criteria": [
+        {
+          "index": 1,
+          "complete": true,
+          "supported": true,
+          "source_ids": [
+            4,
+            7
+          ],
+          "reason": "Bounded candidate-term enumeration and specification verification cover the search space."
+        },
+        {
+          "index": 2,
+          "complete": false,
+          "supported": false,
+          "source_ids": [
+            4
+          ],
+          "reason": "The source contains datatype/brute-force mechanisms, but the answer omits them."
+        },
+        {
+          "index": 3,
+          "complete": true,
+          "supported": true,
+          "source_ids": [
+            1,
+            3
+          ],
+          "reason": "Explains partial explicit concretization plus symbolic solving."
+        },
+        {
+          "index": 4,
+          "complete": true,
+          "supported": true,
+          "source_ids": [
+            1,
+            2,
+            3
+          ],
+          "reason": "Explains parallel scalability and explicit/symbolic benefits."
+        }
+      ],
+      "covered_criteria": 3,
+      "total_criteria": 4,
+      "unsupported_claims": [],
+      "passed": false
+    },
+    {
+      "mode": "initial",
+      "case_id": "benchmark_design_code_and_robotics",
+      "criteria": [
+        {
+          "index": 1,
+          "complete": false,
+          "supported": true,
+          "source_ids": [
+            1,
+            3,
+            7
+          ],
+          "reason": "Competition tasks and scenarios are covered, but live/contamination-reduction design is omitted."
+        },
+        {
+          "index": 2,
+          "complete": true,
+          "supported": true,
+          "source_ids": [
+            7
+          ],
+          "reason": "All four scenarios are named."
+        },
+        {
+          "index": 3,
+          "complete": true,
+          "supported": true,
+          "source_ids": [
+            4,
+            5,
+            6
+          ],
+          "reason": "Mobile robot navigation/manipulation, simulations, physical validation are described."
+        },
+        {
+          "index": 4,
+          "complete": false,
+          "supported": true,
+          "source_ids": [
+            5,
+            10
+          ],
+          "reason": "Metrics are covered, but baseline demonstrations are omitted despite passages containing them."
+        }
+      ],
+      "covered_criteria": 2,
+      "total_criteria": 4,
+      "unsupported_claims": [],
+      "passed": false
+    },
+    {
+      "mode": "initial",
+      "case_id": "self_repair_benchmark_and_risk",
+      "criteria": [
+        {
+          "index": 1,
+          "complete": true,
+          "supported": true,
+          "source_ids": [
+            3
+          ],
+          "reason": "Correct generate/test/feedback/repair workflow."
+        },
+        {
+          "index": 2,
+          "complete": true,
+          "supported": true,
+          "source_ids": [
+            4,
+            6
+          ],
+          "reason": "All scenarios and self-repair inputs are described with correct attribution."
+        },
+        {
+          "index": 3,
+          "complete": true,
+          "supported": true,
+          "source_ids": [
+            2,
+            7
+          ],
+          "reason": "Low counterfeit repair rates and unreliable model feedback justify the caution, satisfying the inherited grading note. Explicit external-feedback wording is not required by that note."
+        }
+      ],
+      "covered_criteria": 3,
+      "total_criteria": 3,
+      "unsupported_claims": [],
+      "passed": true
+    },
+    {
+      "mode": "initial",
+      "case_id": "synthesis_search_strategies",
+      "criteria": [
+        {
+          "index": 1,
+          "complete": false,
+          "supported": false,
+          "source_ids": [],
+          "reason": "Honest acknowledgement of missing CVC4SY information is incomplete."
+        },
+        {
+          "index": 2,
+          "complete": false,
+          "supported": false,
+          "source_ids": [],
+          "reason": "No CVC4SY mechanisms in evidence or answer."
+        },
+        {
+          "index": 3,
+          "complete": true,
+          "supported": true,
+          "source_ids": [
+            1,
+            3
+          ],
+          "reason": "Influential unknowns, explicit concretization, symbolic remainder are described."
+        },
+        {
+          "index": 4,
+          "complete": true,
+          "supported": true,
+          "source_ids": [
+            1,
+            3
+          ],
+          "reason": "States complementary benefits and multicore parallelization."
+        }
+      ],
+      "covered_criteria": 2,
+      "total_criteria": 4,
+      "unsupported_claims": [],
+      "passed": false
+    },
+    {
+      "mode": "refined",
+      "case_id": "benchmark_design_code_and_robotics",
+      "criteria": [
+        {
+          "index": 1,
+          "complete": true,
+          "supported": true,
+          "source_ids": [1, 4],
+          "reason": "Identifies code-LLM evaluation, live contest collection, release dates, and contamination avoidance."
+        },
+        {
+          "index": 2,
+          "complete": true,
+          "supported": true,
+          "source_ids": [1, 4],
+          "reason": "Names self-repair, code execution, and test-output prediction."
+        },
+        {
+          "index": 3,
+          "complete": true,
+          "supported": true,
+          "source_ids": [5, 6, 7],
+          "reason": "Describes pushing-based mobile-robot navigation/manipulation in standardized simulations with physical-testbed comparison."
+        },
+        {
+          "index": 4,
+          "complete": true,
+          "supported": true,
+          "source_ids": [5, 6, 7],
+          "reason": "Covers efficiency, interaction effort/quality, partial completion, task categories, standardized settings, and physical-testbed reproducibility."
+        }
+      ],
+      "covered_criteria": 4,
+      "total_criteria": 4,
+      "unsupported_claims": [],
+      "passed": true
+    },
+    {
+      "mode": "refined",
+      "case_id": "self_repair_benchmark_and_risk",
+      "criteria": [
+        {
+          "index": 1,
+          "complete": true,
+          "supported": true,
+          "source_ids": [
+            2
+          ],
+          "reason": "Accurate generation, testing, feedback, and repair workflow."
+        },
+        {
+          "index": 2,
+          "complete": true,
+          "supported": true,
+          "source_ids": [1, 2, 3],
+          "reason": "Correctly attributes and describes LiveCodeBench's holistic four-scenario evaluation."
+        },
+        {
+          "index": 3,
+          "complete": true,
+          "supported": true,
+          "source_ids": [
+            5,
+            6
+          ],
+          "reason": "Explains adversarial counterfeit behavior, low repair rates, and caution for self-repair/reranking without external feedback."
+        }
+      ],
+      "covered_criteria": 3,
+      "total_criteria": 3,
+      "unsupported_claims": [],
+      "passed": true
+    },
+    {
+      "mode": "refined",
+      "case_id": "synthesis_search_strategies",
+      "criteria": [
+        {
+          "index": 1,
+          "complete": true,
+          "supported": true,
+          "source_ids": [4, 5],
+          "reason": "Describes bounded enumeration of grammar-constrained candidate terms."
+        },
+        {
+          "index": 2,
+          "complete": true,
+          "supported": true,
+          "source_ids": [4],
+          "reason": "Includes algebraic-datatype encoding, optimized brute force, and the hybrid strategy."
+        },
+        {
+          "index": 3,
+          "complete": true,
+          "supported": true,
+          "source_ids": [
+            1,
+            3
+          ],
+          "reason": "Describes influential unknowns, explicit concretization, and symbolic remainder."
+        },
+        {
+          "index": 4,
+          "complete": true,
+          "supported": true,
+          "source_ids": [
+            1,
+            3
+          ],
+          "reason": "Describes explicit/symbolic benefits and multicore parallelism."
+        }
+      ],
+      "covered_criteria": 4,
+      "total_criteria": 4,
+      "unsupported_claims": [],
+      "passed": true
+    }
+  ]
+}
