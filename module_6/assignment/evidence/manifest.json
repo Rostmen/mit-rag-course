@@ -1,0 +1,22 @@
+{
+  "timestamp_utc": "2026-10-08T21:10:19.933646+00:00",
+  "model": "openai/gpt-5.4-mini",
+  "temperature": 0.2,
+  "initialization_seconds": 25.534,
+  "source_sha256": {
+    "module_5/assignment/test_agent_rag.py": "a5d8efe95a0fe234e9bc9531074e4a530ce44b880f94e060b2eeac6667820814",
+    "module_5/assignment/research_tools.py": "42db18e45f4b15b59301f400e20683f16b83de85a4559c02593e054a35c41af7",
+    "module_5/assignment/research_graph.py": "e8a878000d86b089b142ad53d969026fc68cf79cabd1dffea4a8b336a2c8f336",
+    "module_5/assignment/prepare_checkpoint_5.py": "a9b8a705696357f0bf18e60238934be47726e6debd2872d9b171689a6ce2d30d",
+    "module_5/assignment/evidence_guard.py": "ba7e6102aa0ed84c03760e1db88f49689a53ab3360165f2ff42fee0e29b1a907",
+    "module_5/assignment/capstone_checkpoint_5_1_agent_rag_starter.py": "466fe2b2d167deb02ac8c884f65624a3a0bb797db4d6a815fe8e85c78713c81e",
+    "module_5/assignment/report_checkpoint_5.py": "ca4e58373cc072655d185ce60db8cb4492cff626ab338df28cda250869fb1784",
+    "module_5/assignment/retrieval_backend.py": "8495e87f4f3f089e419741ae829bb554ebac0ea9cf3fd164c3c3189d024acc11",
+    "module_5/assignment/evaluate_checkpoint_5.py": "5a172705bbce253964081604e275d95625d3b80292c12a8f1de2cb206adbddfc",
+    "module_5/assignment/audit_checkpoint_5.py": "805a7496647cdc57abf5a722c3d28f054edaffee55a9b6e1d1a34732a9955608",
+    "module_5/assignment/record_offline_tests.py": "ccb624f1fc4b030f14f7fe314456a91a80d38f586452aa0a6a7960f743fa83f1"
+  },
+  "module_5_sources_unchanged": true,
+  "index_source": "module_1/assignment/.rag_indexes/research_papers",
+  "limits": "One run per case; no model ladder, mitigation changes, judge calls, or dollar estimates. Chat tokens exclude embedding usage. Latency excludes initialization."
+}

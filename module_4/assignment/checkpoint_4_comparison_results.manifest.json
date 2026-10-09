@@ -1,0 +1,14 @@
+{
+  "inputs_sha256": "855016f2c897a76d051279c9a53ce088492a0fe62d8d0b566edbfb01d4d59657",
+  "annotations_sha256": "6a0420ce6ea601a99fd2a80524b06e0ace74b5828520472243a5944146572960",
+  "solution_sha256": "dbf6654c376ba0a8e88e3240352f3c3cb8d5518d5f590763f3be87df5831ea4e",
+  "graph_code_sha256": "bcef0dd0647f4a1004c0befaf640bb4425729304fcb2873f5549506debdada67",
+  "judge_model": "openai/gpt-5.4-mini",
+  "answer_model": "openai/gpt-5.4-mini",
+  "top_k": 3,
+  "with_answers": true,
+  "judge": true,
+  "python": "3.14.6",
+  "graph_nodes": 1221,
+  "graph_edges": 1960
+}

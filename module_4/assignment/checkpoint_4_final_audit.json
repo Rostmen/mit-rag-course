@@ -1,0 +1,10 @@
+{
+  "comparisons": 80,
+  "passages_verified_in_source_pdfs": 240,
+  "all_modes_use_three_chunks": true,
+  "fixed_inputs_unchanged": true,
+  "implementation_hashes_match": true,
+  "worksheet_steps": 7,
+  "worksheet_responses": 16,
+  "errors": []
+}

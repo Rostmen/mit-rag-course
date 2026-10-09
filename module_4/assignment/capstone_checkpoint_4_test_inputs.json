@@ -1,0 +1,202 @@
+[
+  {
+    "id": "quote_sketching_abstract",
+    "category": "sanity_exact_quote",
+    "question": "Quote the first sentence of the abstract of The Sketching Approach to Program Synthesis, and identify the source paper.",
+    "reference_answer": "The first abstract sentence says that sketching is a new form of localized software synthesis that bridges a programmer's high-level insights with the computer's ability to manage low-level details. The source is The Sketching Approach to Program Synthesis.",
+    "grading_notes": "Pass only if the answer quotes or very closely reproduces the first abstract sentence: Sketching is a new form of localized software synthesis that aims to bridge the gap between a programmer's high-level insights about a problem and the computer's ability to manage low-level details. It must identify The Sketching Approach to Program Synthesis as the source and must not invent a different abstract sentence.",
+    "expected_sources": ["DBLP_conf_aplas_Solar-Lezama09.pdf"],
+    "required_terms": ["Sketching", "localized software synthesis", "high-level insights", "low-level details"],
+    "answer_type": "supported"
+  },
+  {
+    "id": "motif_identifiability_full_proof",
+    "category": "theorem_explanation",
+    "question": "Explain the proof idea of the Motif Identifiability Theorem and connect it to the theorem setup: what assumptions about motifs matter, what contradiction/contrapositive structure is used, and what failure cases drive the counting argument?",
+    "reference_answer": "The theorem setup relies on motifs as local and sparse spatial concepts with conditions that make them identifiable. The proof idea is contrapositive: assume high motif error and show high end-to-end error. The proof sketch argues that high motif error forces either many false negatives for a channel or a channel-collision case where cells from multiple true channels are covered by one predicted channel, and then completes the result with a counting argument.",
+    "grading_notes": "Pass only if the answer covers all major points: locality and sparsity or equivalent theorem setup conditions; contrapositive structure from high motif error to high end-to-end error; the false-negative case; the channel-collision/shared-predicted-channel case; and the counting-argument role. Answers that only say 'the proof is by contrapositive' or only discuss empirical motif metrics are failures.",
+    "expected_sources": ["DBLP_journals_corr_abs-2302-01976.pdf", "conf_iclr_gupta2025sparling.pdf"],
+    "required_terms": ["locality", "sparsity", "contrapositive", "false negatives", "counting"],
+    "answer_type": "supported"
+  },
+  {
+    "id": "program_synthesis_definitions_three_sources",
+    "category": "multi_document_comparison",
+    "question": "Compare three ways papers in this corpus frame program synthesis: discovering executable programs from user intent or constraints, constructing programs that satisfy specifications, and using broader solver-agnostic synthesis frameworks. Name which source supports each framing.",
+    "reference_answer": "One framing defines program synthesis as discovering an executable program from user intent expressed as constraints. Another defines it as constructing a program satisfying a specification. A broader framework view argues for programmable, solver-agnostic synthesis problem descriptions that can target different solvers and domains.",
+    "grading_notes": "Pass only if the answer distinguishes all three requested framings and ties each to a source: user intent/constraints from the broader synthesis framework paper, specification satisfaction from the syntax-guided synthesis/adaptive-concretization papers, and solver-agnostic or programmable framework ideas from the synthesis-framework paper. It must compare the framings rather than listing one definition.",
+    "expected_sources": ["DBLP_conf_cav_BraggFRS21.pdf", "DBLP_journals_fmsd_JeonQSF17.pdf", "DBLP_conf_cav_JeonQSF15.pdf"],
+    "required_terms": ["user intent", "constraints", "specification", "solver"],
+    "answer_type": "supported"
+  },
+  {
+    "id": "self_repair_benchmark_and_risk",
+    "category": "multi_document_synthesis",
+    "question": "Synthesize what the corpus says about self-repair in code generation: describe the repair workflow, explain how LiveCodeBench evaluates related capabilities, and explain why counterfeit-samples work recommends caution with self-repair or model-based reranking.",
+    "reference_answer": "The self-repair workflow samples code, executes it against tests, generates feedback from errors or failures, and uses that feedback to produce a repaired program. LiveCodeBench evaluates code-generation-adjacent capabilities including self-repair, code execution, and test output prediction on live contest problems. The counterfeit-samples papers warn that models can misunderstand, misclassify, or poorly repair their own flawed outputs, so self-repair and model-based reranking are risky without external feedback.",
+    "grading_notes": "Pass only if the answer covers all three parts: the Olausson-style self-repair workflow; LiveCodeBench's broader evaluation capabilities including self-repair, code execution, and test output prediction; and the counterfeit-samples caution about models using their own feedback, low repair rates, or lack of external feedback. Missing any part is a failure.",
+    "expected_sources": ["DBLP_conf_iclr_OlaussonIW0S24.pdf", "DBLP_conf_iclr_JainHGLYZWSSS25.pdf", "DBLP_conf_acl_GuLJOLSS24.pdf"],
+    "required_terms": ["feedback", "self-repair", "code execution", "external feedback"],
+    "answer_type": "supported"
+  },
+  {
+    "id": "synthesis_search_strategies",
+    "category": "method_comparison",
+    "question": "Compare CVC4SY and adaptive concretization as search strategies for syntax-guided synthesis. What search space does each address, what mechanism does each use, and what tradeoff or benefit is each trying to achieve?",
+    "reference_answer": "CVC4SY is a SyGuS solver based on bounded term enumeration, using algebraic-datatype encoding, optimized brute-force enumeration, and a combined strategy. Adaptive concretization addresses search over assignments to unknowns in syntax-guided synthesis by combining benefits of explicit enumeration and symbolic search, with natural parallelism and performance benefits.",
+    "grading_notes": "Pass only if the answer compares both methods. It must identify CVC4SY's bounded term-enumeration strategies, including algebraic datatypes and brute force or the combined strategy. It must identify adaptive concretization's explicit-vs-symbolic search tradeoff and parallelism/performance motivation. Answers that describe only one method fail.",
+    "expected_sources": ["DBLP_conf_cav_GaoKDRSAK19.pdf", "DBLP_conf_cav_JeonQSF15.pdf", "DBLP_journals_fmsd_JeonQSF17.pdf"],
+    "required_terms": ["CVC4SY", "term enumeration", "explicit", "symbolic", "parallel"],
+    "answer_type": "supported"
+  },
+  {
+    "id": "database_applications_three_examples",
+    "category": "database_systems",
+    "question": "Across the database and data-management papers, compare how program synthesis or program analysis is used in StatusQuo, social recommendations, and entity matching. What is the task in each case, and what practical benefit is claimed?",
+    "reference_answer": "StatusQuo uses program analysis and synthesis to move computation between application and database layers, translating imperative code into relational queries and reducing data movement. The social-recommendation work learns user preferences as programs from likes/dislikes, aiming for faster training, higher accuracy, and manipulable programs for distributed filtering. The entity-matching work synthesizes interpretable matching rules from positive and negative examples, producing concise Boolean rules competitive with less interpretable models.",
+    "grading_notes": "Pass only if the answer covers all three papers and their different tasks: StatusQuo for database/application-layer placement and relational queries; social recommendations for learning user preference programs from likes/dislikes; and entity matching for synthesizing interpretable matching rules from examples. It must include a practical benefit for each. Missing any paper is a failure.",
+    "expected_sources": ["DBLP_conf_cidr_CheungAMSM13.pdf", "DBLP_conf_cikm_CheungSM12.pdf", "DBLP_journals_pvldb_SinghMEMPQST17.pdf"],
+    "required_terms": ["StatusQuo", "social", "entity matching", "relational queries", "rules"],
+    "answer_type": "supported"
+  },
+  {
+    "id": "cad_dataset_and_assembly",
+    "category": "cad_graphics",
+    "question": "Explain how the Fusion 360 Gallery dataset and JoinABLe support research on CAD construction and assembly. What does each contribute, and how do their uses of CAD program or joint information differ?",
+    "reference_answer": "Fusion 360 Gallery provides realistic parametric CAD models represented as construction sequences/programmatic CAD operations, supporting programmatic CAD construction research. JoinABLe learns bottom-up assembly of parametric CAD joints, using weak supervision in standard CAD files and graph representations of solid models to predict how parts join. The dataset contribution is construction-sequence data, while JoinABLe focuses on joint prediction and assembly.",
+    "grading_notes": "Pass only if the answer covers both Fusion 360 Gallery and JoinABLe. It must explain construction sequences or programmatic CAD for Fusion 360 Gallery; joint prediction or part assembly for JoinABLe; weak supervision or graph/solid-model representations for JoinABLe; and the difference between construction data and assembly/joint prediction.",
+    "expected_sources": ["DBLP_journals_tog_WillisPLCDLSM21.pdf", "DBLP_conf_cvpr_WillisJCT0GSTLS22.pdf"],
+    "required_terms": ["Fusion 360", "construction sequences", "JoinABLe", "joints", "weak supervision"],
+    "answer_type": "supported"
+  },
+  {
+    "id": "benchmark_design_code_and_robotics",
+    "category": "benchmark_comparison",
+    "question": "Compare the evaluation design of LiveCodeBench and Bench-Push. For each benchmark, state what is being evaluated, what makes the test setting realistic or reproducible, and what metrics or task categories are used.",
+    "reference_answer": "LiveCodeBench evaluates code LLMs on live contest problems and broader capabilities such as self-repair, code execution, and test output prediction; its live-updating design reduces contamination. Bench-Push evaluates pushing-based navigation and manipulation for mobile robots using simulated environments, metrics for efficiency, interaction effort, and partial completion, and baseline demonstrations for reproducibility.",
+    "grading_notes": "Pass only if the answer compares both benchmarks. It must identify LiveCodeBench's code-LLM setting, live/contamination-free problems, and at least two of self-repair, code execution, or test-output prediction. It must identify Bench-Push's pushing-based mobile robot tasks, simulated environments, evaluation metrics, and baseline demonstrations. Missing either benchmark's reproducibility/realism point is a failure.",
+    "expected_sources": ["DBLP_conf_iclr_JainHGLYZWSSS25.pdf", "DBLP_conf_icra_CamposISK19.pdf"],
+    "required_terms": ["LiveCodeBench", "Bench-Push", "self-repair", "simulated environments", "metrics"],
+    "answer_type": "supported"
+  },
+  {
+    "id": "policies_safety_security_comparison",
+    "category": "safety_security",
+    "question": "Compare how faceted execution for Jeeves and verifiably safe exploration for reinforcement learning enforce safety or policy constraints. What kind of policy or constraint is involved, what mechanism is used, and what guarantee or outcome is claimed?",
+    "reference_answer": "Faceted execution for Jeeves addresses information-flow policies for sensitive data using faceted values and provides a termination-insensitive non-interference/confidentiality argument. Verifiably safe exploration addresses hard safety constraints during end-to-end reinforcement-learning exploration, using object detection and automated reasoning for hybrid dynamical systems to avoid unsafe behavior while preserving safe policies.",
+    "grading_notes": "Pass only if the answer compares both papers. It must identify information-flow/privacy policies and faceted values/non-interference for Jeeves. It must identify formal safety constraints, end-to-end RL with visual inputs, and avoiding unsafe behavior or preserving safe policies for safe exploration. Treating both as generic security papers without mechanisms or guarantees is a failure.",
+    "expected_sources": ["DBLP_conf_plas_AustinYFS13.pdf", "DBLP_conf_hybrid_HuntFMHDS21.pdf"],
+    "required_terms": ["faceted values", "non-interference", "reinforcement learning", "safety constraints", "unsafe"],
+    "answer_type": "supported"
+  },
+  {
+    "id": "distributed_consistency_partial_replication",
+    "category": "distributed_systems",
+    "question": "For the global stabilization paper, explain the difference between the previous full-replication assumption and the paper's general partial-replication setting. How does Global Stable Time fit into the algorithm, and what optimality claim is made?",
+    "reference_answer": "Previous global-stabilization designs assumed full replication, where each data center stored a full copy and clients accessed servers within one data center. The paper supports general partial replication, where servers store arbitrary subsets and clients can communicate with subsets of servers and migrate. Global Stable Time identifies timestamps whose versions can be returned without violating causality, and the paper proves optimality of its computation for remote update visibility latency.",
+    "grading_notes": "Pass only if the answer includes full replication, general partial replication, client/server flexibility or arbitrary subsets, Global Stable Time's role in causal consistency, and the optimality claim about remote update visibility latency. Missing any of these core elements is a failure.",
+    "expected_sources": ["DBLP_conf_ppopp_KurajSP22.pdf"],
+    "required_terms": ["full replication", "partial replication", "Global Stable Time", "causal consistency", "latency"],
+    "answer_type": "supported"
+  },
+  {
+    "id": "scientific_model_induction_linguistics_biology",
+    "category": "cross_domain_science",
+    "question": "Compare the language-theory synthesis paper and the RNA-splicing motif paper as examples of interpretable scientific modeling. What domain does each model, what data or prior structure does each use, and what kind of interpretable output does each produce?",
+    "reference_answer": "The language paper synthesizes interpretable morpho-phonology models across many languages using Bayesian inference, program synthesis, and linguistic/cognitive representations, producing rules and cross-language typological tendencies. The RNA-splicing paper models RNA-binding protein binding and activity for splicing decisions using in vitro-derived RNA affinity models and genome annotations in a modular architecture, producing interpretable motif and aggregator components for RBP effects.",
+    "grading_notes": "Pass only if the answer covers both domains and all requested dimensions: language/morpho-phonology with Bayesian program induction or program synthesis; RNA splicing with RBP motifs, binding, and activity; the data/prior structure for each; and interpretable output for each. Answers that conflate the two meanings of motif or describe only one paper fail.",
+    "expected_sources": ["Ellis22Linguistics.pdf", "Gupta2024.pdf"],
+    "required_terms": ["morpho-phonology", "Bayesian", "RNA-binding", "splicing", "interpretable"],
+    "answer_type": "supported"
+  },
+  {
+    "id": "motif_meaning_image_vs_rna",
+    "category": "ambiguous_term",
+    "question": "The word motif appears in different parts of the corpus. Compare motifs in the Motif Identifiability work with motifs in the RNA-splicing paper. What does motif refer to in each context, and why does that distinction matter for retrieval?",
+    "reference_answer": "In the Motif Identifiability work, motifs are sparse, local spatial concepts or intermediate variables in image-like data whose identifiability can be analyzed. In the RNA-splicing paper, motifs refer to RNA-binding protein sequence motifs used to model binding and activity in splicing decisions. The distinction matters because the same word points to different technical domains and evidence sources.",
+    "grading_notes": "Pass only if the answer distinguishes both meanings: spatial/local/sparse motifs for the identifiability paper, and RNA-binding protein sequence motifs for splicing. It must explain that shared terminology can mislead retrieval if the system does not use surrounding domain context. Answers that treat the motifs as the same concept fail.",
+    "expected_sources": ["DBLP_journals_corr_abs-2302-01976.pdf", "Gupta2024.pdf"],
+    "required_terms": ["spatial", "sparse", "RNA-binding", "splicing", "retrieval"],
+    "answer_type": "supported"
+  },
+  {
+    "id": "machine_programming_pillars_vs_synthesis",
+    "category": "conceptual_comparison",
+    "question": "How do the Three Pillars of Machine Programming broaden the idea of program synthesis? Explain intention, invention, and adaptation, and relate them to at least one narrower synthesis framing from the corpus.",
+    "reference_answer": "The Three Pillars paper frames machine programming around intention, invention, and adaptation: improving human-to-computer and computer-to-ML interfaces, creating or refining algorithms or hardware/software building blocks with ML, and using ML-based constructs to evolve software. This broadens narrower synthesis framings such as constructing a program from a specification or discovering an executable program from user intent and constraints.",
+    "grading_notes": "Pass only if the answer accurately defines intention, invention, and adaptation, and explicitly compares them to a narrower program-synthesis framing from another corpus source. Listing the three words without explaining them or failing to make the comparison is a failure.",
+    "expected_sources": ["DBLP_conf_mapl_GottschlichSTCR18.pdf", "DBLP_conf_cav_BraggFRS21.pdf", "DBLP_journals_fmsd_JeonQSF17.pdf"],
+    "required_terms": ["intention", "invention", "adaptation", "specification", "user intent"],
+    "answer_type": "supported"
+  },
+  {
+    "id": "contamination_and_generalization",
+    "category": "evaluation_methodology",
+    "question": "Compare how LiveCodeBench and the generalization-boundaries paper address evaluation validity for code or program-synthesis models. What threat to validity does each target, and what design response does each use?",
+    "reference_answer": "LiveCodeBench targets benchmark contamination by using live contest problems published after model cutoffs. The generalization-boundaries paper targets unclear generalization caused by opaque training corpora and uncontrolled distribution shifts, using a controlled arithmetic-grammar environment with syntactic and semantic metric spaces to isolate distribution shifts.",
+    "grading_notes": "Pass only if the answer covers both validity threats and both design responses: contamination/live updates for LiveCodeBench, and controlled distributions or syntactic/semantic metric spaces for the generalization-boundaries paper. It must explain the contrast rather than just saying both evaluate code models.",
+    "expected_sources": ["DBLP_conf_iclr_JainHGLYZWSSS25.pdf", "DBLP_journals_cacm_AlurSFS18.pdf"],
+    "required_terms": ["contamination", "live", "distribution", "syntactic", "semantic"],
+    "answer_type": "supported"
+  },
+  {
+    "id": "out_of_domain_oil_price",
+    "category": "out_of_scope",
+    "question": "What is the current oil price, and which paper in this corpus supports that answer?",
+    "reference_answer": "The research-paper corpus does not contain current oil prices, so the system should refuse to answer and should not cite a supporting paper.",
+    "grading_notes": "Pass only if the answer clearly refuses, says the available research-paper documents do not provide enough information to determine the current oil price, and does not invent a price or cite a paper as support.",
+    "expected_sources": [],
+    "required_terms": ["do not provide enough information", "current oil price"],
+    "answer_type": "refusal"
+  },
+  {
+    "id": "general_knowledge_capital_france",
+    "category": "general_knowledge_refusal",
+    "question": "What is the capital of France, and which paper in this corpus supports that answer?",
+    "reference_answer": "The model may know that Paris is the capital of France, but the research-paper corpus is not a source for that fact. The system should refuse to answer from the corpus and should not cite a paper as support.",
+    "grading_notes": "Pass only if the answer refuses to answer from the corpus or says the available documents do not provide support for the capital of France. It must not simply answer Paris unless it clearly states that the corpus does not support the answer, and it must not cite an unrelated paper as evidence.",
+    "expected_sources": [],
+    "required_terms": ["do not provide", "France"],
+    "answer_type": "refusal"
+  },
+  {
+    "id": "general_knowledge_hamlet_author",
+    "category": "general_knowledge_refusal",
+    "question": "Who wrote Hamlet, and which retrieved research paper proves it?",
+    "reference_answer": "The model may know that Shakespeare wrote Hamlet, but the corpus does not provide a supporting research-paper source for that literary fact. The system should refuse to answer from the retrieved papers.",
+    "grading_notes": "Pass only if the answer says the retrieved research papers do not provide support for who wrote Hamlet, or otherwise refuses to answer from the corpus. It must not present Shakespeare as grounded in the retrieved corpus and must not invent a supporting paper.",
+    "expected_sources": [],
+    "required_terms": ["do not provide", "Hamlet"],
+    "answer_type": "refusal"
+  },
+  {
+    "id": "general_knowledge_transformer_architecture",
+    "category": "general_knowledge_refusal",
+    "question": "Summarize the Transformer architecture from Attention Is All You Need and cite the paper from this corpus that contains the architecture.",
+    "reference_answer": "The model may know the Transformer architecture, but the corpus does not contain Attention Is All You Need as a supporting source. The system should refuse to summarize it as corpus-supported evidence.",
+    "grading_notes": "Pass only if the answer says the retrieved corpus does not contain enough information or does not contain the requested Attention Is All You Need paper. It must not provide a general Transformer summary as if it were grounded in the corpus, and it must not cite an unrelated paper.",
+    "expected_sources": [],
+    "required_terms": ["do not", "Attention Is All You Need"],
+    "answer_type": "refusal"
+  },
+  {
+    "id": "unsupported_numeric_claim_gpt4",
+    "category": "general_knowledge_refusal",
+    "question": "What is GPT-4's exact parameter count, and which paper in this corpus reports it?",
+    "reference_answer": "The exact GPT-4 parameter count is not supported by the research-paper corpus. The system should refuse to answer and should not invent a number or cite an unrelated source.",
+    "grading_notes": "Pass only if the answer refuses or says the corpus does not provide an exact GPT-4 parameter count. It must not invent a parameter count and must not cite an unrelated paper as evidence.",
+    "expected_sources": [],
+    "required_terms": ["do not", "GPT-4"],
+    "answer_type": "refusal"
+  },
+  {
+    "id": "false_premise_nobel",
+    "category": "adversarial_false_premise",
+    "question": "According to the papers, what year did SketchAdapt win a Nobel Prize, and how did that prize influence JoinABLe?",
+    "reference_answer": "The premise is unsupported. The corpus discusses SketchAdapt and JoinABLe as research systems, but it does not support SketchAdapt winning a Nobel Prize or influencing JoinABLe through such a prize.",
+    "grading_notes": "Pass only if the answer rejects both parts of the false premise: no supported Nobel Prize year for SketchAdapt and no supported Nobel-Prize influence on JoinABLe. It must not invent a year, award, or causal link.",
+    "expected_sources": [],
+    "required_terms": ["not support", "Nobel", "SketchAdapt", "JoinABLe"],
+    "answer_type": "refusal"
+  }
+]

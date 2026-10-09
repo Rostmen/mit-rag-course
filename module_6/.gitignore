@@ -1,0 +1,12 @@
+!.gitignore
+!README.md
+!Live_Guided_Virtual_Lab_6_1_solution/requirements.txt
+!assignment/*.md
+!assignment/historical_performance.json
+!assignment/evidence/*.json
+!assignment/evidence/*.md
+!assignment/connection_attempt/evidence/*.json
+assignment/.rag_indexes/
+assignment/__pycache__/
+assignment/.env
+assignment/worksheet_preview/

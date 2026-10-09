@@ -1,0 +1,87 @@
+{
+  "annotations": {
+    "documents": 153,
+    "sampled_documents": 39,
+    "document_types": {
+      "paper": 134,
+      "collection": 15,
+      "other": 4
+    },
+    "nodes": 1221,
+    "edges": 1960,
+    "edge_types": {
+      "relates_to": 1223,
+      "authored_by": 627,
+      "same_work": 56,
+      "references": 54
+    },
+    "unresolved_references": 2620,
+    "validated_references": 2665,
+    "rejected_reference_evidence": 1503,
+    "canonical_works": 125,
+    "successful_annotation_tokens": 2880773,
+    "successful_annotation_cost_usd": 3.136
+  },
+  "modes": {
+    "hybrid": {
+      "cases": 20,
+      "source_hit": 12,
+      "all_sources": 5,
+      "mean_source_coverage": 0.619,
+      "canonical_all_sources": 5,
+      "answer_passes": 8,
+      "supported_answer_passes": 4,
+      "refusal_passes": 4,
+      "median_retrieval_seconds": 0.36,
+      "mean_context_characters": 3321,
+      "graph_context_chunks": 0,
+      "planner_fallbacks": 0,
+      "recorded_chat_tokens": 38347
+    },
+    "decomposition": {
+      "cases": 20,
+      "source_hit": 14,
+      "all_sources": 8,
+      "mean_source_coverage": 0.7619,
+      "canonical_all_sources": 12,
+      "answer_passes": 12,
+      "supported_answer_passes": 7,
+      "refusal_passes": 5,
+      "median_retrieval_seconds": 2.04,
+      "mean_context_characters": 3255,
+      "graph_context_chunks": 0,
+      "planner_fallbacks": 0,
+      "recorded_chat_tokens": 44481
+    },
+    "graph": {
+      "cases": 20,
+      "source_hit": 14,
+      "all_sources": 7,
+      "mean_source_coverage": 0.7143,
+      "canonical_all_sources": 10,
+      "answer_passes": 10,
+      "supported_answer_passes": 7,
+      "refusal_passes": 3,
+      "median_retrieval_seconds": 0.38,
+      "mean_context_characters": 3460,
+      "graph_context_chunks": 8,
+      "planner_fallbacks": 0,
+      "recorded_chat_tokens": 40038
+    },
+    "combined": {
+      "cases": 20,
+      "source_hit": 14,
+      "all_sources": 6,
+      "mean_source_coverage": 0.6905,
+      "canonical_all_sources": 11,
+      "answer_passes": 13,
+      "supported_answer_passes": 9,
+      "refusal_passes": 4,
+      "median_retrieval_seconds": 1.05,
+      "mean_context_characters": 3315,
+      "graph_context_chunks": 8,
+      "planner_fallbacks": 0,
+      "recorded_chat_tokens": 39536
+    }
+  }
+}

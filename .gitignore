@@ -1,0 +1,22 @@
+# Keep this repository Python-only. All other project files stay local.
+*
+!*/
+!*.py
+
+# Never track generated Python or virtual-environment files.
+__pycache__/
+*.py[cod]
+.venv/
+*/.venv/
+
+# Module 4 capstone deliverables and reproducible evaluation evidence.
+!/.gitignore
+!/requirements.txt
+!/module_4/README.md
+!/module_4/assignment/*.md
+!/module_4/assignment/annotatedResearchPapers.json
+!/module_4/assignment/capstone_checkpoint_4_test_inputs.json
+!/module_4/assignment/checkpoint_4*.json
+!/module_4/assignment/checkpoint_4*.csv
+!/module_4/assignment/checkpoint_4*.log
+!/module_4/assignment/checkpoint_4_retrieval_traces.jsonl

@@ -1,0 +1,16 @@
+# Baseline starter dependencies
+python-dotenv
+langchain-core
+langchain-openai
+
+# Retrieval/RAG solution dependencies
+beautifulsoup4
+langchain-chroma
+langchain-community
+langchain-text-splitters
+pymupdf
+
+# Module 4 graph and annotation pipeline
+networkx
+openai
+pydantic

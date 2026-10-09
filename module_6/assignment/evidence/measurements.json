@@ -1,0 +1,106 @@
+{
+  "runs": [
+    {
+      "case": "normal/1",
+      "seconds": 11.029,
+      "calls": 6,
+      "input_tokens": 7743,
+      "output_tokens": 834,
+      "total_tokens": 8577,
+      "stop_reason": "coverage_complete",
+      "tool_calls": 2
+    },
+    {
+      "case": "blunt/1",
+      "seconds": 6.983,
+      "calls": 5,
+      "input_tokens": 5493,
+      "output_tokens": 383,
+      "total_tokens": 5876,
+      "stop_reason": "coverage_complete",
+      "tool_calls": 1
+    },
+    {
+      "case": "staged/1",
+      "seconds": 14.192,
+      "calls": 9,
+      "input_tokens": 13653,
+      "output_tokens": 987,
+      "total_tokens": 14640,
+      "stop_reason": "invalid_plan",
+      "tool_calls": 1
+    },
+    {
+      "case": "staged/2",
+      "seconds": 22.075,
+      "calls": 11,
+      "input_tokens": 28011,
+      "output_tokens": 1767,
+      "total_tokens": 29778,
+      "stop_reason": "invalid_plan",
+      "tool_calls": 2
+    },
+    {
+      "case": "staged/3",
+      "seconds": 26.12,
+      "calls": 16,
+      "input_tokens": 59387,
+      "output_tokens": 1945,
+      "total_tokens": 61332,
+      "stop_reason": "invalid_plan",
+      "tool_calls": 5
+    },
+    {
+      "case": "forged_source/1",
+      "seconds": 15.793,
+      "calls": 10,
+      "input_tokens": 15628,
+      "output_tokens": 1207,
+      "total_tokens": 16835,
+      "stop_reason": "invalid_plan",
+      "tool_calls": 1
+    },
+    {
+      "case": "out_of_scope/1",
+      "seconds": 14.572,
+      "calls": 11,
+      "input_tokens": 20304,
+      "output_tokens": 985,
+      "total_tokens": 21289,
+      "stop_reason": "invalid_plan",
+      "tool_calls": 1
+    },
+    {
+      "case": "ambiguous/1",
+      "seconds": 5.896,
+      "calls": 5,
+      "input_tokens": 3703,
+      "output_tokens": 368,
+      "total_tokens": 4071,
+      "stop_reason": "invalid_plan",
+      "tool_calls": 0
+    }
+  ],
+  "by_role": {
+    "requirements": {
+      "calls": 8,
+      "input": 2746,
+      "output": 435
+    },
+    "plan": {
+      "calls": 46,
+      "input": 120888,
+      "output": 4325
+    },
+    "coverage": {
+      "calls": 11,
+      "input": 18286,
+      "output": 2284
+    },
+    "answer": {
+      "calls": 8,
+      "input": 12002,
+      "output": 1432
+    }
+  }
+}

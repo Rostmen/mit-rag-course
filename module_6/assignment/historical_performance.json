@@ -1,0 +1,65 @@
+[
+  {
+    "mode": "baseline",
+    "cases": 3,
+    "calls": 3,
+    "tokens": 4153,
+    "median_seconds": 3.645,
+    "provenance": [
+      {
+        "path": "module_5/assignment/evidence/baseline__benchmark_design_code_and_robotics.json",
+        "sha256": "fccb8488a32609db9d5ee466b2358df16c3d7221a45366187a6207790e3e1884"
+      },
+      {
+        "path": "module_5/assignment/evidence/baseline__synthesis_search_strategies.json",
+        "sha256": "2a5c8024f43966b257c217e43a1d06d39677f635c1c51b8a60d3788e40184dd9"
+      },
+      {
+        "path": "module_5/assignment/evidence/baseline__self_repair_benchmark_and_risk.json",
+        "sha256": "7e2bbacbd577aa3e33fdb2af0f09be62d98269c64d38153800ec57dac2629c9c"
+      }
+    ]
+  },
+  {
+    "mode": "initial",
+    "cases": 3,
+    "calls": 8,
+    "tokens": 17410,
+    "median_seconds": 8.835,
+    "provenance": [
+      {
+        "path": "module_5/assignment/evidence/initial__synthesis_search_strategies.json",
+        "sha256": "5e0621319cbcfadb54147218522c0ff5b13f9af14134c89de1e9f21c7138fc4f"
+      },
+      {
+        "path": "module_5/assignment/evidence/initial__benchmark_design_code_and_robotics.json",
+        "sha256": "37d89119aa7f32fc1ba84f798b6cc55fcd989081222253da11e078bc069d6e2e"
+      },
+      {
+        "path": "module_5/assignment/evidence/initial__self_repair_benchmark_and_risk.json",
+        "sha256": "83fd965b39a3ef733d2b42037649459c8467a23d5981169e654b37906f352a26"
+      }
+    ]
+  },
+  {
+    "mode": "refined",
+    "cases": 3,
+    "calls": 29,
+    "tokens": 72225,
+    "median_seconds": 15.555,
+    "provenance": [
+      {
+        "path": "module_5/assignment/evidence/refined__benchmark_design_code_and_robotics.json",
+        "sha256": "e42c2676e1079dfb28725c633691ef23c57262407d9fbdf5342eda05e4453985"
+      },
+      {
+        "path": "module_5/assignment/evidence/refined__self_repair_benchmark_and_risk.json",
+        "sha256": "36c740875892585ba65d6c4dba49ea7d78c06a73fa9f28e8f9154f8ab067d148"
+      },
+      {
+        "path": "module_5/assignment/evidence/refined__synthesis_search_strategies.json",
+        "sha256": "ddb67a6c0c68f293108681648af386a225f0e23e4982d8adccd1521780199373"
+      }
+    ]
+  }
+]

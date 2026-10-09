@@ -32,7 +32,7 @@ from typing import Any
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_openai import ChatOpenAI
 
-from capstone_checkpoint_2_1_retrieval_strategy_solution import (
+from capstone_checkpoint_3_1_retrieval_strategy_solution import (
     OPENROUTER_BASE_URL,
     LLM_MODEL,
     ResearchPaperRetriever,
