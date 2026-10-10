@@ -1,0 +1,9 @@
+{
+  "completed_runs": 6,
+  "role_routing_verified": true,
+  "module_5_source_hashes_match": true,
+  "worksheet_structure_preserved": true,
+  "step_3_has_no_tables": true,
+  "supporting_links_exist": true,
+  "cost_formula_and_missing_usage_checks_passed": true
+}

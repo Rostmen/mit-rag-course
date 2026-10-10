@@ -20,3 +20,9 @@ __pycache__/
 !/module_4/assignment/checkpoint_4*.csv
 !/module_4/assignment/checkpoint_4*.log
 !/module_4/assignment/checkpoint_4_retrieval_traces.jsonl
+
+# Standalone research-paper application documentation and metadata.
+!/capstone_project/README.md
+!/capstone_project/requirements.txt
+!/capstone_project/.gitignore
+!/capstone_project/annotatedResearchPapers.json

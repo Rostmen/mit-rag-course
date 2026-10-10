@@ -1,0 +1,10 @@
+[
+  {
+    "id": "simple",
+    "question": "What is CVC4SY and how does it search for synthesis solutions?"
+  },
+  {
+    "id": "comparison",
+    "question": "Compare CVC4SY and adaptive concretization as search strategies for syntax-guided synthesis. What search space does each address, what mechanism does each use, and what tradeoff or benefit is each trying to achieve?"
+  }
+]

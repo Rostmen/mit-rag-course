@@ -1,0 +1,107 @@
+{
+  "question": "What is CEGIS?",
+  "sanitized_question": "What is CEGIS?",
+  "input_decision": "allow",
+  "answer": "CEGIS stands for an approach where a synthesizer proposes a candidate program or solution, and then a checker searches for a counterexample that invalidates it; if a counterexample is found, it is added as a learned constraint and the process repeats. The method \u201cgives the solutions to the veri\ufb01er to see if they can be validated, or falsi\ufb01ed by counterexamples,\u201d and \u201cThe counterexamples are then used as learned constraints for the synthesis procedure to \ufb01nd new solutions\u201d [Source 3]. It \u201csuccessfully terminates when the checker fails to produce an adversarial example\u201d [Source 1].\n\nThe available documents do not provide a longer formal definition beyond this workflow [Source 1][Source 3].",
+  "route": "cache",
+  "stop_reason": "cache_hit",
+  "seconds": 6.691,
+  "cache_similarity": 0.9999996423721313,
+  "cache_question": "What is CEGIS?",
+  "cache_valid": true,
+  "direct_satisfactory": null,
+  "usage": {
+    "openai/gpt-5-nano": {
+      "input": 877,
+      "output": 884,
+      "cached": 0
+    },
+    "openai/gpt-5.4-nano": {
+      "input": 165,
+      "output": 10,
+      "cached": 0
+    }
+  },
+  "estimated_chat_usd": 0.00044295000000000006,
+  "embedding_requests": 1,
+  "calls": [
+    {
+      "role": "input_gate",
+      "model": "openai/gpt-5-nano",
+      "seconds": 1.661,
+      "usage": {
+        "input_tokens": 419,
+        "output_tokens": 161,
+        "total_tokens": 580,
+        "input_token_details": {
+          "audio": 0,
+          "cache_read": 0,
+          "cache_creation": 0
+        },
+        "output_token_details": {
+          "audio": 0,
+          "reasoning": 128
+        }
+      }
+    },
+    {
+      "role": "safety_filter",
+      "model": "openai/gpt-5.4-nano",
+      "status": "ok",
+      "usage": {
+        "input_tokens": 165,
+        "output_tokens": 10,
+        "total_tokens": 175,
+        "input_token_details": {
+          "audio": 0,
+          "cache_read": 0,
+          "cache_creation": 0
+        },
+        "output_token_details": {
+          "audio": 0,
+          "reasoning": 0
+        }
+      },
+      "seconds": 0.693
+    },
+    {
+      "role": "cache_validation",
+      "model": "openai/gpt-5-nano",
+      "seconds": 3.858,
+      "usage": {
+        "input_tokens": 458,
+        "output_tokens": 723,
+        "total_tokens": 1181,
+        "input_token_details": {
+          "audio": 0,
+          "cache_read": 0,
+          "cache_creation": 0
+        },
+        "output_token_details": {
+          "audio": 0,
+          "reasoning": 704
+        }
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "d329f67be3144f2f0ec125dcd0f35f389bf954a01aa2b5ccd084fae9972a463e",
+      "source": "DBLP_conf_icml_PuMSK18.pdf",
+      "page": "6",
+      "text": "candidate program s and produces an adversarial counter\nexample ce \u2208D \\D\u2032 which invalidates s. ce is added to the\nsubset of examples, prompting the synthesizer to improve.\nCEGIS successfully terminates when the checker fails to\nproduce an adversarial example.\nAt \ufb01rst glance CEGIS is very similar to our approach, but\na deeper look reveals several important differences. First,\nthe subset D\u2032 of examples constructed by CEGIS upon ter-\nmination is not representative: It is possible for CEGIS to\nsynthesize the correct program without constructing a repre-\nsentative subset by luck, a fact we demonstrate empirically\nin the experiments. The danger of synthesis over a non-\nrepresentative subset is that there might be instances where\nthere are enough constraints to make the synthesis problem\nchallenging, yet not enough constraints for the solver to\nprune the search space. The result is the hanging of the\nsolver for an extended periods of time, without any guaran-\ntee whether the synthesis would ever terminate. Secondly,\nto build the subset of counter examples, CEGIS must solve\n|D\u2032| instances of constraint problems, each one with the\npotential to timeout due to being under-constrained."
+    },
+    {
+      "id": "285d4dca53d83b0eb5a9451821576014658d216d1d7bc100316b42d5711924ea",
+      "source": "DBLP_journals_corr_abs-1711-03243.pdf",
+      "page": "6",
+      "text": "candidate program s and produces an adversarial counter\nexample ce \u2208D \\D\u2032 which invalidates s. ce is added to the\nsubset of examples, prompting the synthesizer to improve.\nCEGIS successfully terminates when the checker fails to\nproduce an adversarial example.\nAt \ufb01rst glance CEGIS is very similar to our approach, but\na deeper look reveals several important differences. First,\nthe subset D\u2032 of examples constructed by CEGIS upon ter-\nmination is not representative: It is possible for CEGIS to\nsynthesize the correct program without constructing a repre-\nsentative subset by luck, a fact we demonstrate empirically\nin the experiments. The danger of synthesis over a non-\nrepresentative subset is that there might be instances where\nthere are enough constraints to make the synthesis problem\nchallenging, yet not enough constraints for the solver to\nprune the search space. The result is the hanging of the\nsolver for an extended periods of time, without any guaran-\ntee whether the synthesis would ever terminate. Secondly,\nto build the subset of counter examples, CEGIS must solve\n|D\u2032| instances of constraint problems, each one with the\npotential to timeout due to being under-constrained."
+    },
+    {
+      "id": "38eb161dd907ad2f3a627e86077381698978fb170b05bc2c6d8e0aa896979c6e",
+      "source": "DBLP_journals_corr_abs-1807-08137.pdf",
+      "page": "2",
+      "text": "quanti\ufb01ed variables and gives the solutions to the veri\ufb01er to see if they can be\nvalidated, or falsi\ufb01ed by counterexamples. The counterexamples are then used\nas learned constraints for the synthesis procedure to \ufb01nd new solutions. This\nmethod has been shown e\ufb00ective for many challenging problems, frequently gen-\nerating more optimized programs than the best manual implementations [5].\nHowever, a direct application of CEGIS to decision problems over real numbers\nsu\ufb00ers from several problems. CEGIS is complete in \ufb01nite domains because it can\nexplicitly enumerate solutions, which can not be done in continuous domains.\nAlso, CEGIS ensures progress by avoiding duplication of solutions, while due to\nnumerical sensitivity, precise control over real numbers is di\ufb03cult. In this paper\nwe propose methods that bypass such di\ufb03culties.\nWe propose an integration of the CEGIS method in the branch-and-prune\nframework as a generic algorithm for solving nonlinear \u2203\u2200-formulas over real\nnumbers and prove that the algorithm is \u03b4-complete. We achieve this goal by\nusing CEGIS-based methods for turning universally-quanti\ufb01ed constraints into"
+    }
+  ]
+}

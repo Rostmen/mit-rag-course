@@ -10,3 +10,5 @@ assignment/.rag_indexes/
 assignment/__pycache__/
 assignment/.env
 assignment/worksheet_preview/
+!assignment/evidence/cost_6_2/*.json
+!assignment/evidence/cost_6_2/*.md

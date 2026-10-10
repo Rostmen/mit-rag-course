@@ -1,0 +1,21 @@
+{
+  "checked_on": "2026-10-09",
+  "usd_per_million_tokens": {
+    "openai/gpt-5.4-mini": {
+      "input": 0.75,
+      "output": 4.5,
+      "cached": 0.075
+    },
+    "openai/gpt-4o-mini": {
+      "input": 0.15,
+      "output": 0.6,
+      "cached": 0.075
+    }
+  },
+  "sources": [
+    "https://openrouter.ai/openai/gpt-5.4-mini",
+    "https://openrouter.ai/openai/gpt-4o-mini"
+  ],
+  "formula": "Lab estimate: (input * input_rate + output * output_rate) / 1e6. Cache-aware estimate: ((input - cache_read) * input_rate + cache_read * cache_rate + output * output_rate) / 1e6.",
+  "scope": "Estimated chat cost, not invoice. Excludes embeddings, fees and unreported retry usage. Standard advertised rates; routing may change billing."
+}

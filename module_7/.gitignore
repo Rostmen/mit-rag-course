@@ -1,0 +1,16 @@
+!.gitignore
+!README.md
+!Lab_7_1/README.md
+!Live_Guided_Virtual_Lab_7_2/README.md
+!Live_Guided_Virtual_Lab_7_2/requirements.txt
+!assignment/*.md
+!assignment/requirements.txt
+!assignment/annotatedResearchPapers.json
+!assignment/evidence/*/*.json
+!assignment/evidence/*/*.md
+!assignment/evidence/lab_7_2/source_snapshot.txt
+assignment/.rag_indexes/
+.semantic_cache/
+__pycache__/
+assignment/.env
+assignment/ResearchPapers

@@ -1,0 +1,12 @@
+.env
+.venv/
+__pycache__/
+*.py[cod]
+.semantic_cache/
+caches/
+results/*
+!results/input_guardrails.json
+!results/input-guard-valid-query.json
+!results/chat-security.json
+!results/startup-cold.json
+!results/startup-warm.json

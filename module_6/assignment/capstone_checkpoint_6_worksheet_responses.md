@@ -114,25 +114,26 @@ Evaluate the performance characteristics of your system. Consider:
 
 Summarize the performance characteristics of your system.
 
-**Response:** Across eight audit turns, responses took 5.9–26.1 seconds and used 5–16 model calls each. The normal question used 8,577 tokens; the neutral follow-up after the staged attack used 61,332. Token usage served as a cost proxy; dollar cost was not measured.
+**Response:** Following Lab 6.2, I ran two identical questions with GPT-5.4-mini, GPT-4o-mini, and mixed routing (5.4-mini planning/checks, 4o-mini answers). Estimated chat costs were $0.0688, $0.0070, and $0.0349, respectively; median query times were 17.8, 15.2, and 14.5 seconds. The configurations used 25, 16, and 18 calls.
 
 ### Evidence
 
 Include measurements, observations, logs, or examples that support your analysis.
 
-**Response:** The saved [measurements](evidence/measurements.json) and [traces](evidence/runs.json) record 73 model calls and 162,398 chat tokens. Latency excludes initialization, and token totals exclude embeddings. Each input was tested once, so these are sample observations.
+**Response:** The [measurement summary](evidence/cost_6_2/summary.json) separates input, output, and cached tokens by model and role. Cost equals input tokens × input price plus output tokens × output price. Applying reported cache discounts reduces the totals to $0.0672, $0.0068, and $0.0340. These are chat-only estimates using [verified rates](evidence/cost_6_2/pricing.json), excluding embeddings; latency excludes initialization.
 
 ### Identified Bottlenecks or Inefficiencies
 
 Describe any performance challenges you observed.
 
-**Response:** Planning consumed 77% of chat tokens. Repeated coverage checks and planner retries added work, even for unsupported requests: the poem request used 11 calls and 21,289 tokens before refusal.
+**Response:** Planning and checks consumed about 91% of the current configuration's estimated cost. Repeated prompts and retries dominated spending. Only mixed retrieved both papers for the comparison, but its different planning path means one run cannot establish a model-quality advantage.
 
 ### Contributing Design Decisions
 
 Explain how aspects of the system design contributed to the observed behavior.
 
-**Response:** The agent repeatedly passes accumulated context through planning and evidence checks. Treating style requests as factual requirements triggers unnecessary verification. Action and context limits bound the workflow, but do not guarantee a fixed cost or response time.
+**Response:** The agent repeatedly sends accumulated context through planning and evidence checks. A cheaper writer reduces answer cost but leaves most planning cost intact. Following the lab, I distinguished fewer tokens from cheaper tokens; mixed used both in this run, so its savings cannot be attributed solely to model routing.
+
 
 ## Step 4. Trade-Off Analysis
 
@@ -176,16 +177,15 @@ Describe a trade-off observed in your system.
 
 Describe a trade-off observed in your system.
 
-**Response:** Restricted research tools versus flexibility.
+**Response:** Model price versus answer completeness: the cheap configuration cost least, while mixed covered both methods in the comparison.
 
 ### Why This Trade-Off Occurs
 
-**Response:** Four allowlisted tools search the local corpus, filter its catalogue, read observed papers, and follow validated in-corpus references. There is no arbitrary shell, file-writing, or external-web action.
+**Response:** Models have different token prices and can choose different retrieval paths. Mixed keeps the current planner and uses a cheaper answer model. Its better retrieval in this pass occurred before the writer ran, so it cannot be credited to the cheaper writer.
 
 ### Impact on System Behavior
 
-**Response:** The agent can investigate research questions while limiting the effects of tool misuse. It cannot fulfill tasks requiring unavailable sources or external actions. Tool restrictions do not by themselves prevent misleading prose, roleplay, or misuse of text already in the conversation.
-
+**Response:** The Lab 6.2 experiment shows a possible cost/quality trade-off, not a proven best configuration. Mixed covered more requested facts but still overgeneralized one result. Repeated trials are needed before adopting a model change.
 
 ## Step 5. Reflection
 
@@ -201,13 +201,13 @@ Which issue would concern you most in a real-world deployment, and why?
 
 What did this audit reveal about the strengths and limitations of your current system design?
 
-**Response:** The system resisted the blunt redirection and rejected the fabricated success claim in this run. Read-only allowlisted tools and bounded actions limit what it can execute. However, conversation history can carry unwanted behavior forward, and evidence validation can become counterproductive when the checklist contains non-factual requirements. One model and one pass cannot establish attack success rates, robustness across models, or production reliability.
+**Response:** The system resisted the blunt redirection and rejected the fabricated success claim in this run. Read-only allowlisted tools and bounded actions limit what it can execute. However, conversation history can carry unwanted behavior forward, and evidence validation can become counterproductive when the checklist contains non-factual requirements. The security probes used one model; the separate cost experiment compared three configurations once. Neither establishes general robustness or production reliability.
 
 ### Future Investigation Priorities
 
 If you were preparing to improve this system in a future iteration, which issue would you investigate first?
 
-**Response:** First investigate how often checklist extraction turns style or out-of-scope requests into evidence obligations. Repeat matched normal/staged prompts, inspect the requirements and retry traces, and measure incremental calls/tokens. Also investigate the prior-tool clarification rule using underspecified questions. Next test actual retrieved-document injection and longer conversations. These are future investigations only; no hardening, tuning, model changes, or earlier-module edits were made.
+**Response:** First investigate how often checklist extraction turns style or out-of-scope requests into evidence obligations. Repeat matched normal/staged prompts, inspect the requirements and retry traces, and measure incremental calls/tokens. Also investigate the prior-tool clarification rule using underspecified questions. Next test actual retrieved-document injection and longer conversations. These are future investigations only; no hardening, tuning, permanent model changes, or earlier-module edits were made. Model routing varied only in the Lab 6.2 measurement harness.
 
 
 ## Supporting Materials
@@ -216,9 +216,9 @@ Use this section to list or link to any supporting materials included with your 
 
 | Supporting material | Location, link, or note |
 |---|---|
-| Test cases | [Exact scripted inputs](evidence/test_cases.json); [completed audit Python](capstone_checkpoint_6_1_audit.py) |
-| System outputs | [Readable transcript](evidence/transcript.md); [raw answers, evidence and traces](evidence/runs.json) |
-| Performance measurements | [Fresh per-turn and per-role usage](evidence/measurements.json); [historical comparison and source hashes](historical_performance.json) |
+| Test cases | [Security inputs](evidence/test_cases.json); [cost questions](evidence/cost_6_2/test_cases.json); [audit Python](capstone_checkpoint_6_1_audit.py); [measurement Python](capstone_checkpoint_6_2_measurement.py) |
+| System outputs | [Security transcript](evidence/transcript.md); [security traces](evidence/runs.json); [cost experiment answers](evidence/cost_6_2/report.md); [cost experiment traces](evidence/cost_6_2/runs.json) |
+| Performance measurements | [Lab 6.2 cost comparison](evidence/cost_6_2/summary.json), [pricing](evidence/cost_6_2/pricing.json), [quality review](evidence/cost_6_2/quality_review.md), and [measurement method](lab_6_2_measurement_notes.md); [security-audit usage](evidence/measurements.json) |
 | Screenshots or diagrams | Not needed: text outputs and traces directly document the observed behavior. |
 | Other supporting evidence | [Run manifest and unchanged-source hashes](evidence/manifest.json); [source review](source_review.md); [Module 5 passage review](../../module_5/assignment/evidence/review_notes.md). Earlier connection failures are retained separately in `connection_attempt/`. |
 

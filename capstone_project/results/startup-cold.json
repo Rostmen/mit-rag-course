@@ -1,0 +1,42 @@
+{
+  "startup_seconds": 22.405,
+  "pdf_loads": 1,
+  "bm25_builds": 1,
+  "chunks": 20345,
+  "rankings": {
+    "CEGIS counterexamples": [
+      {
+        "source": "DBLP_journals_corr_abs-1807-08137.pdf",
+        "score": 16.54662406471816,
+        "text": "quanti\ufb01ed variables and gives the solutions to the veri\ufb01er to see if they can be\nvalidated, or falsi\ufb01ed by counterexamples. The counterexamples are then used\nas learned constraints for the synthesis procedure to \ufb01nd new solutions. This\nmethod has been shown e\ufb00ective for many challenging problems, frequently gen-\nerating more optimized programs than the best manual implementations [5].\nHowever, a direct application of CEGIS to decision problems over real numbers\nsu\ufb00ers from several problems. CEGIS is complete in \ufb01nite domains because it can\nexplicitly enumerate solutions, which can not be done in continuous domains.\nAlso, CEGIS ensures progress by avoiding duplication of solutions, while due to\nnumerical sensitivity, precise control over real numbers is di\ufb03cult. In this paper\nwe propose methods that bypass such di\ufb03culties.\nWe propose an integration of the CEGIS method in the branch-and-prune\nframework as a generic algorithm for solving nonlinear \u2203\u2200-formulas over real\nnumbers and prove that the algorithm is \u03b4-complete. We achieve this goal by\nusing CEGIS-based methods for turning universally-quanti\ufb01ed constraints into"
+      },
+      {
+        "source": "DBLP_conf_cav_KongSG18.pdf",
+        "score": 15.877157921384674,
+        "text": "220\nS. Kong et al.\nidea is to break the process of solving \u2203\u2200-formulas into a loop between synthe-\nsis and veri\ufb01cation. The synthesis procedure \ufb01nds solutions to the existentially\nquanti\ufb01ed variables and gives the solutions to the veri\ufb01er to see if they can be\nvalidated, or falsi\ufb01ed by counterexamples. The counterexamples are then used\nas learned constraints for the synthesis procedure to \ufb01nd new solutions. This\nmethod has been shown e\ufb00ective for many challenging problems, frequently gen-\nerating more optimized programs than the best manual implementations [5].\nA direct application of CEGIS to decision problems over real numbers, how-\never, su\ufb00ers from several problems. CEGIS is complete in \ufb01nite domains because\nit can explicitly enumerate solutions, which can not be done in continuous\ndomains. Also, CEGIS ensures progress by avoiding duplication of solutions,\nwhile due to numerical sensitivity, precise control over real numbers is di\ufb03cult.\nIn this paper we propose methods that bypass such di\ufb03culties.\nWe propose an integration of the CEGIS method in the branch-and-prune\nframework as a generic algorithm for solving nonlinear \u2203\u2200-formulas over real"
+      },
+      {
+        "source": "DBLP_conf_cav_BraggFRS21.pdf",
+        "score": 13.152954344908075,
+        "text": "744\nH. Unno et al.\nWe next present a novel constraint solving method for pfwCSP based on strat-\ni\ufb01ed CounterExample-Guided Inductive Synthesis (CEGIS) of ordinary, well-\nfounded, and functional predicates. In our method, ordinary predicates represent\nrelational inductive invariants, well-founded predicates witness synchronous ter-\nmination, and functional predicates represent Skolem functions witnessing exis-\ntential quanti\ufb01ers that encode angelic non-determinism. These witnesses for a\nrelational property are often mutually dependent and involve many variables\nin a complicated way (see the extended report [58] for examples). The synthe-\nsis thus needs to use expressive templates without compromising the e\ufb03ciency.\nStrati\ufb01ed CEGIS combines CEGIS [51] with strati\ufb01ed families of templates [55]\n(i.e., decomposing templates into a series of increasingly expressive templates)\nto achieve completeness in the sense of [34,55], a theoretical guarantee of conver-\ngence, and a faster and stable convergence by avoiding the over\ufb01tting problem\nof expressive templates to counterexamples [44]. The constraint solving method"
+      }
+    ],
+    "CVC4SY bounded term enumeration": [
+      {
+        "source": "DBLP_conf_cav_GaoKDRSAK19.pdf",
+        "score": 25.056682194769586,
+        "text": "CVC4SY: Smart and Fast Term Enumeration for Syntax-Guided Synthesis\n75\nFig. 1. Architecture of CVC4SY.\nThe Problem. A syntax-guided synthesis problem for a function f in a background\ntheory T consists of a set of semantic restrictions, or speci\ufb01cation, for f given by a\n(second-order) T-formula of the form Df. \u03d5[f], and a set of syntactic restrictions on\nthe solutions for f, typically expressed as a context-free grammar. An enumerative\napproach to this problem combines a term enumerator and a solution veri\ufb01er for solving\nsynthesis conjectures. The role of the term enumerator is to output a stream of terms\nt1, t2, . . . over some tuple \u00afx of variables representing the inputs of f, where each ti[\u00afx]\nis a candidate solution. The role of the solution veri\ufb01er is to check for each ti whether it\nis a solution for f by determining if the negated conjecture \u2423\u03d5[\u03bb\u00afx.ti] is unsatis\ufb01able.\nBounded term generation considers terms based on an ordering such as term size\n(the number of non-nullary symbols in a term). For each k = 0, 1, 2, . . ., the term enu-\nmerator outputs a \ufb01nite set Sk of terms, each of size at most k. Bounded term generation"
+      },
+      {
+        "source": "DBLP_conf_cav_GaoKDRSAK19.pdf",
+        "score": 24.001086243599485,
+        "text": "CVC4SY: Smart and Fast Term Enumeration\nfor Syntax-Guided Synthesis\nAndrew Reynolds1, Haniel Barbosa1,\nAndres N\u00a8otzli2(B), Clark Barrett2,\nand Cesare Tinelli1\n1 The University of Iowa, Iowa City, USA\n2 Stanford University, Stanford, USA\nnoetzli@cs.stanford.edu\nAbstract. We present CVC4SY, a syntax-guided synthesis (SyGuS) solver based\non three bounded term enumeration strategies. The \ufb01rst encodes term enumer-\nation as an extension of the quanti\ufb01er-free theory of algebraic datatypes. The\nsecond is based on a highly optimized brute-force algorithm. The third combines\nelements of the others. Our implementation of the strategies within the satis\ufb01abil-\nity modulo theories (SMT) solver CVC4 and a heuristic to choose between them\nleads to signi\ufb01cant improvements over state-of-the-art SyGuS solvers.\n1\nIntroduction\nSyntax-guided synthesis (SyGuS) [3] is a recent paradigm for program synthesis, suc-\ncessfully used for applications in formal veri\ufb01cation and programming languages. Most\nSyGuS solvers perform counterexample-guided inductive synthesis (CEGIS) [16]: a\nre\ufb01nement loop in which a learner proposes solutions, and a veri\ufb01er, generally a satis\ufb01-"
+      },
+      {
+        "source": "DBLP_conf_cav_GaoKDRSAK19.pdf",
+        "score": 21.841118230640497,
+        "text": "SyGuS solvers perform counterexample-guided inductive synthesis (CEGIS) [16]: a\nre\ufb01nement loop in which a learner proposes solutions, and a veri\ufb01er, generally a satis\ufb01-\nability modulo theories (SMT) solver [8,9], checks them and provides counterexamples\nfor failures. Generally, the learner enumerates some set of terms, while pruning spuri-\nous ones [17]. The simplicity and ef\ufb01cacy of enumerative SyGuS have made it the de\nfacto approach for SyGuS, although alternatives exist for restricted fragments [4,14].\nIn previous work [14], we have shown how the SMT solver CVC4 [5] can itself act as\nan ef\ufb01cient synthesizer. This tool paper focuses on recent advances in the enumerative\nsubsolver of CVC4, culminating in the current SyGuS solver CVC4SY. Figure 1 shows\nits main components. The term enumerator is parameterized by an enumeration strategy\nchosen before solving: CVC4SY S, whose constraint-based (smart) enumeration allows\nfor numerous optimizations (Sect. 2); CVC4SY F, based on a new approach for (fast)\nenumerative synthesis (Sect. 3), which has signi\ufb01cant advantages with respect to the\nenumerative solver CVC4SY S and other state-of-the-art approaches; and CVC4SY H,"
+      }
+    ]
+  }
+}

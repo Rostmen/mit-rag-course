@@ -1,0 +1,15 @@
+{
+  "method": "Assistant review of final answers against saved retrieved passages. Not an independent human or automated judge. Same criteria for each configuration; no extra model calls.",
+  "criteria": {
+    "simple": [
+      "Identifies CVC4SY as a SyGuS solver within CVC4.",
+      "Explains bounded candidate term enumeration and verification, supported by cited passages."
+    ],
+    "comparison": [
+      "Describes CVC4SY bounded grammar/term search.",
+      "Describes its datatype, fast enumeration, or hybrid mechanisms.",
+      "Describes adaptive concretization as combining explicit enumeration and symbolic search over unknown assignments.",
+      "Explains the explicit/symbolic trade-off and parallelism/performance motivation."
+    ]
+  }
+}
